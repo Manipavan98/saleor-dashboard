@@ -1,12 +1,12 @@
 pipeline{
     agent {label 'jdk11'}
     triggers{
-        pollSCM ("* * * * *")
+        pollSCM ('* * * * *')
     }
     stages {
         stage('clone'){
             steps {
-                git url:'https://github.com/Manipavan98/saleor-dashboard.git' , branch : 'master'
+                git url:'https://github.com/Manipavan98/saleor-dashboard.git' , branch : 'main'
             }
             }
             stage('image build'){
