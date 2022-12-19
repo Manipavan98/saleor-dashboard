@@ -1,0 +1,19 @@
+pipeline{
+    agent {label 'jdk11'}
+    stages {
+        stage('clone'){
+            steps {
+                git url:'https://github.com/Manipavan98/saleor-dashboard.git' , branch : 'master'
+            }
+            }
+            stage('image build'){
+                steps {
+                    sh 'docker image build -t manipavan/saleor-dashboard:Dev'     
+                }
+            }
+            stage('image push')
+            steps{
+                sh 'docker image push manipavan/saleor-dashboard:Dev'
+            }
+        }           
+        }
