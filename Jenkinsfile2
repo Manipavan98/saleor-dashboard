@@ -14,9 +14,10 @@ pipeline{
                     sh 'docker image build -t manipavan/saleor-dashboard:Dev'     
                 }
             }
-            stage('image push')
+            stage('image push'){
             steps{
                 sh 'docker image push manipavan/saleor-dashboard:Dev'
+            }
             }
         }           
         }
